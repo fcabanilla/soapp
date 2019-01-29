@@ -1,0 +1,25 @@
+<ion-view view-title="Browse">
+  <ion-content>
+    <h1>Lugares</h1>
+  <div class="list">
+
+    <div ng-repeat="dev in devices" class="item item-button-right">
+      <div class="item item-icon-left">
+        {{dev.device}} - {{dev.area.area}} - {{dev.area.place.place}}        
+        {{dev}}
+        <div class="item-note">
+          <label ng-show="dev.editable" ng-click="changeState('{{dev._id}}', !{{dev.lastState}})" class="toggle">
+            <input type="checkbox">
+            <div class="track">
+              <div class="handle"></div>
+            </div>
+          </label>
+          <span ng-show="!dev.editable">{{dev.lastState}}</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  </ion-content>
+</ion-view>
