@@ -53,6 +53,15 @@ angular.module('starter.controllers')
         method: 'PUT',
         data: 'lastState='+newState
       }).success(cb)
+    },
+    getActualState: function(devId, token, cb){
+      $http({
+        url: url+'/device/actualState/'+devId,
+        headers: {
+          'Authorization': token,
+        },
+        method: 'GET'
+      }).success(cb)
     }
   }
 })

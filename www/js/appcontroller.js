@@ -23,9 +23,10 @@ angular.module('starter.controllers', [])
     $scope.modal.hide();
   };
 
-
   $scope.logout = function(){
     LoginService.logout()
+    $location.path('/app/welcome')
+    $location.path('/app')
   }
 
   // Open the login modal
@@ -37,7 +38,6 @@ angular.module('starter.controllers', [])
   $scope.doLogin = function() {
     LoginService.login($scope.loginData.username, $scope.loginData.password, function(res){
         $scope.closeLogin();
-        console.log('entro')
         $location.path('/app/places')
         $scope.loginData={}
     })
