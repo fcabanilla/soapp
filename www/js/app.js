@@ -53,7 +53,29 @@ angular.module('starter', ['ionic', 'starter.controllers'])
           controller: 'DispCtrl'
         }
       }
-    });
+    })
+
+  
+  .state('app.places', {
+      url: '/places',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/places.html',
+          controller: 'PlacesCtrl'
+        }
+      }
+    })
+
+   .state('app.areas', {
+       url: '/areas',
+       views: {
+         'menuContent': {
+           templateUrl: 'templates/areas.html',
+           controller: 'AreasCtrl'
+         }
+       }
+     })
+  
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/welcome');
 });

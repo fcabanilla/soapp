@@ -1,0 +1,17 @@
+<ion-view view-title="Areas">
+  <ion-content>
+    <h1>Areas</h1>
+    <div class="list">
+      <div ng-repeat="area in areas" class="item item-button-right">
+        <div class="item item-icon-left">
+          {{area.area}}
+          <button class="button button-balanced" ng-click="goToDevices(area._id)">
+            Enter to the area
+          </button>
+        </div>
+  
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

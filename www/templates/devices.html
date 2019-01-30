@@ -1,15 +1,14 @@
-<ion-view view-title="Browse">
+<ion-view view-title="Devices">
   <ion-content>
-    <h1>Lugares</h1>
+    <h1>Devices</h1>
   <div class="list">
 
     <div ng-repeat="dev in devices" class="item item-button-right">
       <div class="item item-icon-left">
-        {{dev.device}} - {{dev.area.area}} - {{dev.area.place.place}}        
-        {{dev}}
+        {{dev.device}}
         <div class="item-note">
-          <label ng-show="dev.editable" ng-click="changeState('{{dev._id}}', !{{dev.lastState}})" class="toggle">
-            <input type="checkbox">
+          <label ng-show="dev.editable" class="toggle">
+            <input id="idcheckbox" type="checkbox" ng-click="changeState('{{dev._id}}')">
             <div class="track">
               <div class="handle"></div>
             </div>
@@ -17,9 +16,8 @@
           <span ng-show="!dev.editable">{{dev.lastState}}</span>
         </div>
       </div>
-
     </div>
   </div>
-
+  
   </ion-content>
 </ion-view>

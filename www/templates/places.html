@@ -1,0 +1,17 @@
+<ion-view view-title="Places">
+  <ion-content>
+    <h1>Places</h1>
+    <div class="list">
+      <div ng-repeat="plac in places" class="item item-button-right">
+        <div class="item item-icon-left">
+          {{plac.description}}
+          <button class="button button-balanced" ng-click="goToPlace(plac._id)">
+            Enter to the place
+          </button>
+        </div>
+  
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>
