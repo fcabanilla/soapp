@@ -26,7 +26,6 @@ angular.module('starter.controllers', [])
   $scope.logout = function(){
     LoginService.logout()
     $location.path('/app/welcome')
-    $location.path('/app')
   }
 
   // Open the login modal
