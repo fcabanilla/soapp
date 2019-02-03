@@ -1,29 +1,26 @@
 <ion-view view-title="Devices">
   <ion-content>
-    <h1>Devices</h1>
-  <div class="list">
-
-    <div ng-repeat="dev in devices" class="item item-button-right">
-      <div class="item item-icon-left">
-        {{dev.device}}
-        <div class="item-note">
-          <label ng-show="dev.editable" class="toggle">
-            <input id="idcheckbox" type="checkbox" ng-click="changeState('{{dev._id}}')">
-            <div class="track">
-              <div class="handle"></div>
-            </div>
-          </label>
-          <label ng-show="!dev.editable" >
-            <div ng-bind="{{dev.lastState}}">
-            </div>
-            <button class="button button-balanced" ng-click="refrescarEstado(dev._id)">
-              Refresh
-            </button>
-          </label>
+    <div class="list">
+      <div ng-repeat="dev in devices" class="item item-button-right">
+        <div class="item item-icon-left">
+          {{dev.device}}
+          <div class="item-note">
+            <label ng-show="dev.editable" class="toggle">
+              <input id="idcheckbox" type="checkbox" ng-click="changeState('{{dev._id}}')" ng-model="dev.lastState">
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+            <label ng-show="!dev.editable" >
+              <div ng-bind="{{actualStateDev}}">
+              </div>
+              <button class="button button-balanced" ng-click="refrescarEstado(dev._id)">
+                Refresh
+              </button>
+            </label>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  
   </ion-content>
 </ion-view>

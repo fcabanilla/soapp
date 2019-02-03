@@ -1,0 +1,19 @@
+<ion-view view-title="Extra services">
+  <ion-content>
+    <div class="list">
+      <div ng-repeat="svc in services" class="item item-button-right">
+        <div class="item item-icon-left">
+          {{svc.automaticFunction}}
+          <div class="item-note">
+            <label class="toggle">
+              <input id="idcheckbox" type="checkbox" ng-click="changeState('{{svc._id}}')" ng-model="svc.lastState">
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -97,3 +97,40 @@ angular.module('starter.controllers')
     },
   }
 })
+
+.service('ExtraServicesService', function($http){
+  var url= "http://localhost/api"
+  return {
+    getById: function(s_id, token, cb){
+      console.log(url +'/automaticFunction/'+s_id)
+      $http({
+        url: url + '/automaticFunction/'+s_id,
+        headers: {
+          'Authorization': token
+        },
+        method: 'GET'
+      }).success(cb)
+    },
+    getAll: function(token, cb){
+      console.log(url +'/automaticFunction')
+      $http({
+        url: url + '/automaticFunction',
+        headers: {
+          'Authorization': token
+        },
+        method: 'GET'
+      }).success(cb)
+    },
+    changeState: function(s_id, newState, token, cb){
+      $http({
+        url: url +'/automaticFunction/'+s_id,
+        headers: {
+          'Authorization': token,
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        method: 'PUT',
+        data: 'state='+newState
+      }).success(cb)
+    }
+  }
+})
