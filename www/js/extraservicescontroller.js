@@ -17,7 +17,6 @@ function ExtraServicesController($scope, $rootScope, $location, ExtraServicesSer
       for(var i = 0; i < $scope.services.length; i++)
         $scope.services[i].lastState = $scope.services[i].lastState == 1 
     });
-
     $scope.changeState = function(sId){  
       if(document.getElementById('idcheckbox').checked){
         $scope.newState="1";  
