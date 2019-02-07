@@ -3,7 +3,7 @@ angular.module('starter.controllers')
 .service('LoginService', function ($http, $rootScope) {
   return {
     login: function (user, pass, cb) {
-      url = "http://localhost/api"
+      url = "http://192.168.192.23/api"
 
       return $http({
         url: url+'/login',
@@ -31,7 +31,7 @@ angular.module('starter.controllers')
 })
 
 .service('DispService', function($http){
-  var url= "http://localhost/api"
+  var url = "http://192.168.192.23/api"
   return {
     getByArea: function(area_id, token, cb){
       console.log(url+'/devices/'+area_id)
@@ -67,7 +67,7 @@ angular.module('starter.controllers')
 })
 
 .service('PlacesService', function($http){
-  var url= "http://localhost/api"
+  var url = "http://192.168.192.23/api"
   return {
     getByUser: function(user_id, token, cb){
       console.log(url+'/places/'+user_id)
@@ -83,7 +83,7 @@ angular.module('starter.controllers')
 })
 
 .service('AreasService', function($http){
-  var url= "http://localhost/api"
+  var url = "http://192.168.192.23/api"
   return {
     getByPlace: function(place_id, token, cb){
       console.log(url+'/areas/'+place_id)
@@ -99,7 +99,7 @@ angular.module('starter.controllers')
 })
 
 .service('ExtraServicesService', function($http){
-  var url= "http://localhost/api"
+  var url = "http://192.168.192.23/api"
   return {
     getById: function(s_id, token, cb){
       console.log(url +'/automaticFunction/'+s_id)

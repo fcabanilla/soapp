@@ -19,10 +19,10 @@ function ExtraServicesController($scope, $rootScope, $location, ExtraServicesSer
     });
     $scope.changeState = function(sId){  
       if(document.getElementById('idcheckbox').checked){
-        $scope.newState="1";  
+        $scope.newState="0";  
       }
       else{
-        $scope.newState="0";
+        $scope.newState="1";
       }
       ExtraServicesService.changeState(sId, $scope.newState, $rootScope.user.token, console.log)
     }

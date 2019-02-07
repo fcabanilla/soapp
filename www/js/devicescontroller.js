@@ -16,6 +16,7 @@ function DevicesController($window, $scope, $rootScope, $location, DispService){
     }
     
 
+  setInterval(function () {
     DispService.getByArea($rootScope.areaid, $rootScope.user.token, function(re){
       $scope.devices = re.devices
       for(var i = 0; i < $scope.devices.length; i++)
@@ -25,11 +26,14 @@ function DevicesController($window, $scope, $rootScope, $location, DispService){
           $scope.actualStateDev=$scope.devices[i].lastState;
 
     });
+  }, 200, "JavaScript");
       
     $scope.refrescarEstado=function(devid){
+      /*
       DispService.getActualState(devid, $rootScope.user.token, function(resp){
         $scope.actualStateDev=resp.actualState;
       })
+      */
         return $scope.actualStateDev
     }
 
